@@ -4,17 +4,11 @@ module.exports = {
     title: "RowZ",
   },
   plugins: [
-    "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "",
-      },
-    },
     "gatsby-plugin-sitemap",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "@chakra-ui/gatsby-plugin",
     {
       resolve: "gatsby-source-filesystem",
       options: {
