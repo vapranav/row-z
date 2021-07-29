@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 
 const KuttyHero = () => {
-  const bg = useColorModeValue("black", "gray.800");
+  const bg = useColorModeValue("black", "#162447");
   return (
-    <Flex bg={bg} px={4} py={32} mx='auto'>
+    <Flex bg={bg} h='100vh' px={4} py={32} mx='auto'>
       <Box w='full' mx='auto' w={{ lg: 8 / 12, xl: 5 / 12 }}>
         <chakra.p
           mb={2}

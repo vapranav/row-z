@@ -13,8 +13,10 @@ import {
   CloseButton,
 } from "@chakra-ui/react";
 
+import { AiOutlineMenu } from "react-icons/ai";
+
 export default function Navbar() {
-  const bg = useColorModeValue("white", "gray.800");
+  const bg = useColorModeValue("white", "#162447");
   const mobileNav = useDisclosure();
   return (
     <chakra.header bg={bg} w='full' px={{ base: 2, sm: 4 }} py={4} shadow='md'>
@@ -26,7 +28,7 @@ export default function Navbar() {
             display='flex'
             alignItems='center'
           >
-            <VisuallyHidden>Choc</VisuallyHidden>
+            <VisuallyHidden>Row Z</VisuallyHidden>
           </chakra.a>
           <chakra.h1 fontSize='xl' fontWeight='medium' ml='2'>
             Row-Z
@@ -41,9 +43,6 @@ export default function Navbar() {
           >
             <Button variant='ghost'>About</Button>
           </HStack>
-          <Button colorScheme='brand' size='sm'>
-            Get Started
-          </Button>
           <Box display={{ base: "inline-flex", md: "none" }}>
             <IconButton
               display={{ base: "flex", md: "none" }}
@@ -51,6 +50,7 @@ export default function Navbar() {
               fontSize='20px'
               color={useColorModeValue("gray.800", "inherit")}
               variant='ghost'
+              icon={<AiOutlineMenu></AiOutlineMenu>}
               onClick={mobileNav.onOpen}
             />
 

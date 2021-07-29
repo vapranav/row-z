@@ -11,7 +11,7 @@ import {
 const Ma = () => {
   return (
     <Flex
-      bg={useColorModeValue("black", "gray.800")}
+      bg={useColorModeValue("black", "#1B1B2F")}
       p={50}
       w='full'
       alignItems='centre'
@@ -40,7 +40,7 @@ const Ma = () => {
               textTransform='uppercase'
               color={useColorModeValue("brand.600", "brand.400")}
             >
-              Product
+              29 Jun 2021
             </chakra.span>
             <Link
               display='block'
@@ -50,7 +50,7 @@ const Ma = () => {
               mt={2}
               _hover={{ color: "gray.600", textDecor: "underline" }}
             >
-              I Built A Successful Blog In One Year
+              Some football based visualisation
             </Link>
             <chakra.p
               mt={2}
@@ -79,16 +79,9 @@ const Ma = () => {
                   fontWeight='bold'
                   color={useColorModeValue("gray.700", "gray.200")}
                 >
-                  Jone Doe
+                  Pranav V A
                 </Link>
               </Flex>
-              <chakra.span
-                mx={1}
-                fontSize='sm'
-                color={useColorModeValue("gray.600", "gray.300")}
-              >
-                21 SEP 2015
-              </chakra.span>
             </Flex>
           </Box>
         </Box>
