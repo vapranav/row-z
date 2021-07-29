@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
 import "@fontsource/poppins";
-import Lotto from "./Lotto";
 // import {
 //   Box,
 //   Image,
