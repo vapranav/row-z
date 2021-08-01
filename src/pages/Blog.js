@@ -11,7 +11,7 @@ import {
 const Ma = () => {
   return (
     <Flex
-      bg={useColorModeValue("black", "#1B1B2F")}
+      bg={useColorModeValue("black", "gray.600")}
       p={50}
       w='full'
       alignItems='centre'
@@ -48,7 +48,7 @@ const Ma = () => {
               fontWeight='bold'
               fontSize='2xl'
               mt={2}
-              _hover={{ color: "gray.600", textDecor: "underline" }}
+              _hover={{ color: "gray.600" }}
             >
               Some football based visualisation
             </Link>

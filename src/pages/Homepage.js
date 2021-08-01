@@ -3,9 +3,10 @@ import { Wrap, WrapItem, useColorModeValue } from "@chakra-ui/react";
 import KuttyHero from "./Hero";
 import Navbar from "./Navbar";
 import Ma from "./Blog";
+import Sj from "./Footer";
 
 export default function Homepage() {
-  const bg = useColorModeValue("white", "#1B1B2F");
+  const bg = useColorModeValue("white", "gray.600");
   return (
     <div>
       <Navbar />
@@ -18,6 +19,7 @@ export default function Homepage() {
           <Ma></Ma>
         </WrapItem>
       </Wrap>
+      <Sj></Sj>
     </div>
   );
 }
