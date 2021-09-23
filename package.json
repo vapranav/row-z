@@ -32,6 +32,8 @@
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-plugin-sitemap": "^4.6.0",
     "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-source-mongodb": "^3.13.0",
+    "gatsby-source-pg": "^0.2.1",
     "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "^3.10.0",
     "react": "^17.0.1",

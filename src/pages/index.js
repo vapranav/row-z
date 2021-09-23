@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
 import "@fontsource/poppins";
+import { graphql } from "gatsby";
 // import {
 //   Box,
 //   Image,
@@ -18,15 +19,34 @@ import theme from "../theme";
 // styles
 // markup
 
-class IndexPage extends Component {
-  render() {
-    return (
+export default function IndexPage({ data }) {
+  const results = data.allMongodbMyFirstDatabaseCompetitions.edges;
+  return (
+    <div>
       <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode='dark'></ColorModeScript>
         <Homepage />
       </ChakraProvider>
-    );
-  }
+      {results.map((result) => (
+        <strong>
+          <b> {result.node.name} </b>
+        </strong>
+      ))}
+      <h1>
+        About {data.allMongodbMyFirstDatabaseCompetitions.edges[0].node.name}
+      </h1>
+    </div>
+  );
 }
 
-export default IndexPage;
+export const query = graphql`
+  query {
+    allMongodbMyFirstDatabaseCompetitions {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+`;

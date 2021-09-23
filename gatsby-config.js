@@ -10,6 +10,19 @@ module.exports = {
     "gatsby-transformer-sharp",
     "@chakra-ui/gatsby-plugin",
     {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        connectionString:
+          "mongodb+srv://Pranav:Recovery72@cluster0.p5op3.mongodb.net",
+        dbName: `myFirstDatabase`,
+        collection: `competitions`,
+        // connectionString: "mongodb://localhost:27017",
+        // dbName: `ybox`,
+        // collection: `competitions`,
+      },
+      query: { documents: { as_of: { $gte: 1604397088013 } } },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
