@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-source-mongodb`,
       options: {
         connectionString:
-          "mongodb+srv://Pranav:Recovery72@cluster0.p5op3.mongodb.net",
+          "",
         dbName: `myFirstDatabase`,
         collection: `competitions`,
         // connectionString: "mongodb://localhost:27017",
