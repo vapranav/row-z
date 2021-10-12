@@ -1,86 +1,47 @@
-import React from "react";
-import {
-  chakra,
-  Box,
-  Flex,
-  useColorModeValue,
-  VisuallyHidden,
-  HStack,
-  Button,
-  useDisclosure,
-  VStack,
-  IconButton,
-  CloseButton,
-} from "@chakra-ui/react";
+import { Link } from "gatsby";
+import React, { Component } from "react";
+import Toggle from "../components/themeToggle";
 
-import { AiOutlineMenu } from "react-icons/ai";
-
-export default function Navbar() {
-  const bg = useColorModeValue("white", "#162447");
-  const mobileNav = useDisclosure();
+let Navbar = () => {
   return (
-    <chakra.header bg={bg} w='full' px={{ base: 2, sm: 4 }} py={4} shadow='md'>
-      <Flex alignItems='center' justifyContent='space-between' mx='auto'>
-        <Flex>
-          <chakra.a
-            href='/'
-            title='Choc Home Page'
-            display='flex'
-            alignItems='center'
-          >
-            <VisuallyHidden>Row Z</VisuallyHidden>
-          </chakra.a>
-          <chakra.h1 fontSize='xl' fontWeight='bold' ml='2'>
-            row-z
-          </chakra.h1>
-        </Flex>
-        <HStack display='flex' alignItems='center' spacing={1}>
-          <HStack
-            spacing={1}
-            mr={1}
-            color='brand.500'
-            display={{ base: "none", md: "inline-flex" }}
-          >
-            <Button variant='ghost'>About</Button>
-          </HStack>
-          <Box display={{ base: "inline-flex", md: "none" }}>
-            <IconButton
-              display={{ base: "flex", md: "none" }}
-              aria-label='Open menu'
-              fontSize='20px'
-              color={useColorModeValue("gray.800", "inherit")}
-              variant='ghost'
-              icon={<AiOutlineMenu></AiOutlineMenu>}
-              onClick={mobileNav.onOpen}
-            />
-
-            <VStack
-              pos='absolute'
-              top={0}
-              left={0}
-              right={0}
-              display={mobileNav.isOpen ? "flex" : "none"}
-              flexDirection='column'
-              p={2}
-              pb={4}
-              m={2}
-              bg={bg}
-              spacing={3}
-              rounded='sm'
-              shadow='sm'
-            >
-              <CloseButton
-                aria-label='Close menu'
-                onClick={mobileNav.onClose}
-              />
-
-              <Button w='full' variant='ghost'>
-                About
-              </Button>
-            </VStack>
-          </Box>
-        </HStack>
-      </Flex>
-    </chakra.header>
+    <nav className='flex justify-between items-center h-16 bg-white dark:bg-dark-gray text-white sticky top-0 '>
+      <Link
+        to='/'
+        className='pl-8 text-xl font-raleway font-bold text-black dark:text-white'
+      >
+        row-z
+      </Link>
+      <div className='text-black dark:text-white textpx-4 cursor-pointer md:hidden relative'>
+        <Toggle />
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          className='h-6 w-6 mr-4'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+        >
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth={2}
+            d='M4 6h16M4 12h16M4 18h16'
+          />
+        </svg>
+      </div>
+      <div className='pr-8 md:block hidden relative'>
+        <Link className='p-4 font-raleway text-black dark:text-white' to='/'>
+          Blog
+        </Link>
+        <Link
+          className='p-4 mr-8 font-raleway text-black dark:text-white'
+          to='/'
+        >
+          About
+        </Link>
+        <Toggle />
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

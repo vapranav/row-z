@@ -1,30 +1,35 @@
-// const path = require("path");
-// //const slugifyPost = require("./slugifyPost");
+const path = require("path");
 
-// exports.createPages = async ({ graphql, actions: { createPage } }) => {
-//   const { result } = await graphql(`
-//     {
-//       competitions: allMongodbMyFirstDatabaseCompetitions {
-//         edges {
-//           node {
-//             id
-//             mongodb_id
-//             name
-//           }
-//         }
-//       }
-//     }
-//   `);
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-//   const pageTemplate = path.resolve("./src/DisplayData.js");
+  const result = await graphql(`
+    {
+      allSanityPost {
+        nodes {
+          title
+          _rawSlug
+          _id
+        }
+      }
+    }
+  `);
 
-//   for (const { node } of result.competitions.edges) {
-//     createPage({
-//       path: "/book/${node.id}/",
-//       component: path.resolve("./src/DisplayData.js"),
-//       context: {
-//         id: node.mongodb_id,
-//       },
-//     });
-//   }
-// };
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  const pageTemplate = path.resolve("./src/templates/post.js");
+
+  const posts = result.data.allSanityPost.nodes || [];
+  posts.forEach((post, index) => {
+    const Path = `/published/${post._rawSlug.current}`;
+
+    createPage({
+      path: Path,
+      component: pageTemplate,
+      context: { title: post.title, id: post._id },
+    });
+    console.log(post._id);
+  });
+};

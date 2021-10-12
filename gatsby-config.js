@@ -1,6 +1,10 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.example.com",
     title: "RowZ",
   },
   plugins: [
@@ -8,14 +12,13 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "@chakra-ui/gatsby-plugin",
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-mongodb`,
       options: {
-        connectionString:
-          "mongodb+srv://Pranav:Recovery72@cluster0.p5op3.mongodb.net",
-        dbName: `myFirstDatabase`,
-        collection: `competitions`,
+        connectionString: "",
+        dbName: ``,
+        collection: "",
         // connectionString: "mongodb://localhost:27017",
         // dbName: `ybox`,
         // collection: `competitions`,
@@ -37,6 +40,19 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        // a token with read permissions is required
+        // if you have a private dataset
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: "default",
+      },
     },
   ],
 };
