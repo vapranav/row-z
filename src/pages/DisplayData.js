@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 // import { Link, graphql, useStaticQuery } from "gatsby";
 
 // // import Layout from "../components/layout";
@@ -52,3 +52,7 @@
 // //   }
 // // }
 // //export default DisplayData;
+
+export default function DisplayData() {
+  return <div>Hello World!</div>;
+}
