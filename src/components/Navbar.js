@@ -4,7 +4,7 @@ import Toggle from "../components/themeToggle";
 
 let Navbar = () => {
   return (
-    <nav className='flex justify-between items-center h-16 bg-white dark:bg-dark-gray text-white sticky top-0 '>
+    <nav className='flex justify-between items-center h-16 bg-white dark:bg-dark-gray text-white sticky top-0 z-40'>
       <Link
         to='/'
         className='pl-8 text-xl font-raleway font-bold text-black dark:text-white'

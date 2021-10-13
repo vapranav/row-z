@@ -21,7 +21,7 @@ let Homepage = ({ data }) => {
         {blogPosts.map((post) => (
           // <ul className='text-black dark:text-white'>{post.author.name}</ul>
           <Link to={"../published/" + post._rawSlug.current}>
-            <div className='bg-figma-blue w-3/4 mx-auto h-1/4 mt-5 px-10 py-5 rounded filter drop-shadow'>
+            <div className='bg-figma-blue w-3/4 mx-auto h-1/4 mt-5 px-10 py-5 rounded filter drop-shadow z-0'>
               <p className='font-merriweather font-bold text-white'>
                 {post.title}
               </p>
