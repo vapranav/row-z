@@ -31,7 +31,7 @@ let Navbar = () => {
       <div className='pr-8 md:block hidden relative'>
         <Link
           className='p-4 font-raleway text-black dark:text-white'
-          to='/Homepage'
+          to='/Homepage2'
         >
           Blog
         </Link>
