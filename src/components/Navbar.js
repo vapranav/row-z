@@ -29,7 +29,10 @@ let Navbar = () => {
         </svg>
       </div>
       <div className='pr-8 md:block hidden relative'>
-        <Link className='p-4 font-raleway text-black dark:text-white' to='/'>
+        <Link
+          className='p-4 font-raleway text-black dark:text-white'
+          to='/Homepage'
+        >
           Blog
         </Link>
         <Link

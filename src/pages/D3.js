@@ -79,5 +79,13 @@ import React from "react";
 // }
 
 export default function D3() {
-  return <div>Hello World!</div>;
+  return (
+    <div className='bg-black'>
+      <div className='text-5xl font-extrabold'>
+        <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500'>
+          Hello world
+        </span>
+      </div>
+    </div>
+  );
 }
