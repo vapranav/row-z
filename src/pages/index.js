@@ -3,6 +3,7 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 import { Link } from "gatsby";
+import "../styles/stylesheet.css";
 
 // import { Component } from "react";
 // import "@fontsource/poppins";
