@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 // import Layout from "../components/Layout";
 // import { ThemeProvider } from "../components/themeContext";
 // import Toggle from "../components/themeToggle";
