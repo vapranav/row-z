@@ -60,9 +60,9 @@ import "../styles/stylesheet.css";
 export default function IndexPage() {
   return (
     <Layout>
-      <section class='w-full h-screen bg-white dark:bg-dark-gray'>
+      <section className='w-full h-screen bg-white dark:bg-dark-gray'>
         <div
-          class='
+          className='
   relative
   items-center
   w-full
@@ -75,11 +75,11 @@ export default function IndexPage() {
   lg:py-24
 '
         >
-          <div class='flex w-full mx-auto text-left'>
-            <div class='relative inline-flex items-center mx-auto align-middle'>
-              <div class='text-center'>
+          <div className='flex w-full mx-auto text-left'>
+            <div className='relative inline-flex items-center mx-auto align-middle'>
+              <div className='text-center'>
                 <h1
-                  class='
+                  className='
           max-w-5xl
           text-2xl
           font-bold
@@ -92,15 +92,15 @@ export default function IndexPage() {
         '
                 >
                   {" "}
-                  Great reads and stunning <br class='hidden lg:block' />
-                  <span class='bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500'>
+                  Great reads and stunning <br className='hidden lg:block' />
+                  <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500'>
                     {" "}
                     visualizations{" "}
                   </span>
                   to stimulate your mind.{" "}
                 </h1>
                 <p
-                  class='
+                  className='
           max-w-xl
           mx-auto
           mt-8
@@ -113,11 +113,11 @@ export default function IndexPage() {
                   I'm Pranav and this is my storybook of sorts. Expect lots of
                   sports, technology and good vibes 😄
                 </p>
-                <div class='flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6'>
-                  <div class='mt-3 rounded-lg sm:mt-0'>
+                <div className='flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6'>
+                  <div className='mt-3 rounded-lg sm:mt-0'>
                     <Link to={"/Homepage2"}>
                       <button
-                        class='
+                        className='
               items-center
               block
               px-5

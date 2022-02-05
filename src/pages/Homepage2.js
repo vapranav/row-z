@@ -18,10 +18,10 @@ let Homepage = ({ data }) => {
         </p>
         {/* <BlockContent blocks={results} />
         {blogPosts.map((post) => (
-          // <ul className='text-black dark:text-white'>{post.author.name}</ul>
+          // <ul classNameName='text-black dark:text-white'>{post.author.name}</ul>
           <Link to={"../published/" + post._rawSlug.current}>
-            <div className='bg-figma-blue w-3/4 mx-auto h-1/4 mt-5 px-10 py-5 rounded filter drop-shadow z-0'>
-              <p className='font-merriweather font-bold text-white'>
+            <div classNameName='bg-figma-blue w-3/4 mx-auto h-1/4 mt-5 px-10 py-5 rounded filter drop-shadow z-0'>
+              <p classNameName='font-merriweather font-bold text-white'>
                 {post.title}
               </p>
             </div>
@@ -30,7 +30,7 @@ let Homepage = ({ data }) => {
 
         <section>
           <div
-            class='
+            className='
           relative
           items-center
           w-full
@@ -42,35 +42,35 @@ let Homepage = ({ data }) => {
           max-w-7xl
         '
           >
-            <div class='relative mx-auto max-w-7xl'>
-              <div class='grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none'>
+            <div className='relative mx-auto max-w-7xl'>
+              <div className='grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none'>
                 {blogPosts.map((post) => (
-                  <div class='flex flex-col mb-12 overflow-hidden cursor-pointer'>
+                  <div className='flex flex-col mb-12 overflow-hidden cursor-pointer'>
                     <a href={"../published/" + post._rawSlug.current}>
-                      <div class='flex-shrink-0'>
+                      <div className='flex-shrink-0'>
                         <img
-                          class='object-cover w-full h-48 rounded-lg'
+                          className='object-cover w-full h-48 rounded-lg'
                           src='https://images.unsplash.com/photo-1510166089176-b57564a542b1?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2024&amp;q=80'
                           alt=''
                         />
                       </div>
                     </a>
-                    <div class='flex flex-col justify-between flex-1'>
+                    <div className='flex flex-col justify-between flex-1'>
                       <a href={"../published/" + post._rawSlug.current}> </a>
-                      <div class='flex-1'>
+                      <div className='flex-1'>
                         <a href={"../published/" + post._rawSlug.current}>
-                          <div class='flex pt-6 space-x-1 text-sm text-gray-300'>
-                            <time datetime='2020-03-10'> Mar 10, 2020 </time>
+                          <div className='flex pt-6 space-x-1 text-sm text-gray-300'>
+                            <time dateTime='2020-03-10'> Mar 10, 2020 </time>
                             <span aria-hidden='true'> · </span>
                             <span> 4 min read </span>
                           </div>
                         </a>
                         <a
                           href={"../published/" + post._rawSlug.current}
-                          class='block mt-2 space-y-6'
+                          className='block mt-2 space-y-6'
                         >
                           <h3
-                            class='
+                            className='
                         text-2xl
                         font-semibold
                         leading-none
@@ -82,7 +82,7 @@ let Homepage = ({ data }) => {
                             {post.title}{" "}
                           </h3>
 
-                          <p class='text-lg font-normal text-gray-300'>
+                          <p className='text-lg font-normal text-gray-300'>
                             {" "}
                             BLAH BLAH BLAH BLAH BLAH{" "}
                           </p>

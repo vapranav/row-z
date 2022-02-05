@@ -54,5 +54,22 @@ module.exports = {
         graphqlTag: "default",
       },
     },
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        // Sanity project info (required)
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+      },
+    },
+    // {
+    //   resolve: "gatsby-plugin-disqus",
+    //   options: {
+    //     shortname: "rowz",
+    //   },
+    // },
   ],
+  flags: {
+    DEV_SSR: false,
+  },
 };

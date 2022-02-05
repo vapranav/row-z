@@ -23,7 +23,7 @@ let Navbar = () => {
           <path
             strokeLinecap='round'
             strokeLinejoin='round'
-            strokeWidth={2}
+            strokeWidth='2'
             d='M4 6h16M4 12h16M4 18h16'
           />
         </svg>
@@ -41,7 +41,6 @@ let Navbar = () => {
         >
           About
         </Link>
-        <Toggle />
       </div>
     </nav>
   );
