@@ -2,8 +2,14 @@ import React from "react";
 import Layout from "../components/Layout";
 import "../styles/stylesheet.css";
 import { graphql } from "gatsby";
+import Image from "gatsby-plugin-sanity-image";
 
 let Homepage = ({ data }) => {
+  let convertDate = (date) => {
+    var dateObject = new Date(date);
+    var converted = dateObject.toString().substring(4, 15);
+    return converted;
+  };
   let blogPosts = data.allSanityPost.nodes;
   //console.log(blogPosts);
   return (
@@ -48,10 +54,9 @@ let Homepage = ({ data }) => {
                   <div className='flex flex-col mb-12 overflow-hidden cursor-pointer'>
                     <a href={"../published/" + post._rawSlug.current}>
                       <div className='flex-shrink-0'>
-                        <img
+                        <Image
                           className='object-cover w-full h-48 rounded-lg'
-                          src='https://images.unsplash.com/photo-1510166089176-b57564a542b1?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2024&amp;q=80'
-                          alt=''
+                          asset={post.mainImage.asset}
                         />
                       </div>
                     </a>
@@ -59,8 +64,11 @@ let Homepage = ({ data }) => {
                       <a href={"../published/" + post._rawSlug.current}> </a>
                       <div className='flex-1'>
                         <a href={"../published/" + post._rawSlug.current}>
-                          <div className='flex pt-6 space-x-1 text-sm text-gray-300'>
-                            <time dateTime='2020-03-10'> Mar 10, 2020 </time>
+                          <div
+                            className='flex pt-6 space-x-1 text-sm text-black
+                        dark:text-white'
+                          >
+                            <time> {convertDate(post._createdAt)} </time>
                             <span aria-hidden='true'> · </span>
                             <span> 4 min read </span>
                           </div>
@@ -75,14 +83,18 @@ let Homepage = ({ data }) => {
                         font-semibold
                         leading-none
                         tracking-tighter
-                        text-white
+                        text-black
+                        dark:text-white
                       '
                           >
                             {" "}
                             {post.title}{" "}
                           </h3>
 
-                          <p className='text-lg font-normal text-gray-300'>
+                          <p
+                            className='text-lg font-normal text-black
+                        dark:text-white'
+                          >
                             {" "}
                             BLAH BLAH BLAH BLAH BLAH{" "}
                           </p>
@@ -104,6 +116,7 @@ export const query = graphql`
   query {
     allSanityPost {
       nodes {
+        _createdAt
         _rawSlug
         author {
           name
@@ -112,6 +125,12 @@ export const query = graphql`
           title
         }
         title
+        mainImage {
+          asset {
+            _id
+            gatsbyImageData
+          }
+        }
       }
     }
   }
