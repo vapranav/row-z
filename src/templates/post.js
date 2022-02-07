@@ -6,6 +6,7 @@ import Image from "gatsby-plugin-sanity-image";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokaiSublime } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { DiscussionEmbed } from "disqus-react";
+import D3 from "../components/d3";
 
 const BlockContent = require("@sanity/block-content-to-react");
 const serializers = {
@@ -19,6 +20,7 @@ const serializers = {
         {props.node.code}
       </SyntaxHighlighter>
     ),
+    data: (props) => <D3 props={props} />,
   },
 };
 
@@ -31,7 +33,7 @@ const Post = (props, pageContext) => {
     shortname: "rowz",
     config: { identifier: id },
   };
-  console.log(mainImage);
+  //console.log(mainImage);
   return (
     <Layout>
       <Image asset={mainImage.asset} alt='' width={500} />
