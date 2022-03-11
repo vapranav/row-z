@@ -7,6 +7,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokaiSublime } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { DiscussionEmbed } from "disqus-react";
 import D3 from "../components/d3";
+import BlockImage from "../components/imageRef";
 
 const BlockContent = require("@sanity/block-content-to-react");
 const serializers = {
@@ -21,6 +22,13 @@ const serializers = {
       </SyntaxHighlighter>
     ),
     data: (props) => <D3 props={props} />,
+    image: (props) => <BlockImage props={props} />,
+    break: (props) => {
+      const { style } = props.node;
+      if (style === "break") {
+        return <div className='p-4' />;
+      }
+    },
   },
 };
 
@@ -28,6 +36,7 @@ const Post = (props, pageContext) => {
   const results = props.data.sanityPost;
   const { _rawBody } = results;
   const { mainImage } = results;
+  const { title } = results;
   const { id } = pageContext;
   const disqusConfig = {
     shortname: "rowz",
@@ -37,6 +46,7 @@ const Post = (props, pageContext) => {
   return (
     <Layout>
       <Image asset={mainImage.asset} alt='' width={500} />
+      <h1 className='bg-dark-gray text-white p-4'>{title}</h1>
       <BlockContent
         blocks={_rawBody}
         serializers={serializers}
@@ -55,6 +65,7 @@ export const PageQuery = graphql`
   query ($id: String!) {
     sanityPost(_id: { eq: $id }) {
       _rawBody
+      title
       mainImage {
         asset {
           _id
