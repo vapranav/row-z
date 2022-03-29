@@ -12,6 +12,10 @@ module.exports = {
         raleway: ["raleway", "sans-serif"],
         merriweather: ["merriweather", "sans-serif"],
       },
+      height: {
+        "half-screen": "50vh",
+        "image-size": "400px",
+      },
     },
   },
   variants: {

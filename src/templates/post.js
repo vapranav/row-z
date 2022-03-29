@@ -13,13 +13,16 @@ const BlockContent = require("@sanity/block-content-to-react");
 const serializers = {
   types: {
     exampleUsage: (props) => (
-      <SyntaxHighlighter
-        language={props.node.language || "text"}
-        style={monokaiSublime}
-        wrapLongLines={true}
-      >
-        {props.node.code}
-      </SyntaxHighlighter>
+      <div style={{ maxWidth: "100%" }}>
+        <SyntaxHighlighter
+          language={props.node.language || "text"}
+          style={monokaiSublime}
+          wrapLines={true}
+          wrapLongLines={true}
+        >
+          {props.node.code}
+        </SyntaxHighlighter>
+      </div>
     ),
     data: (props) => <D3 props={props} />,
     image: (props) => <BlockImage props={props} />,
@@ -45,12 +48,21 @@ const Post = (props, pageContext) => {
   //console.log(mainImage);
   return (
     <Layout>
-      <Image asset={mainImage.asset} alt='' width={500} />
-      <h1 className='bg-dark-gray text-white p-4'>{title}</h1>
+      <div className='h-half-screen'>
+        <Image
+          asset={mainImage.asset}
+          alt=''
+          style={{ width: "100%", height: "100%" }}
+        />
+      </div>
+
+      <h1 className='font-bold lg:px-20 bg-dark-gray text-white p-4'>
+        {title}
+      </h1>
       <BlockContent
         blocks={_rawBody}
         serializers={serializers}
-        className='bg-dark-gray text-white p-4'
+        className='lg:px-20 bg-dark-gray text-white p-4'
       />
       <div className='bg-white dark:bg-dark-gray p-10'>
         <DiscussionEmbed {...disqusConfig} />
