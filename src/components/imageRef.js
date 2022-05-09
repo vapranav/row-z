@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "gatsby-plugin-sanity-image";
 import imageUrlBuilder from "@sanity/image-url";
 const sanityClient = require("@sanity/client");
 
