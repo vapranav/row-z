@@ -14,7 +14,10 @@ module.exports = {
       },
       height: {
         "half-screen": "50vh",
-        "image-size": "400px",
+        "image-height": "400px",
+      },
+      width: {
+        "image-width": "400px",
       },
     },
   },

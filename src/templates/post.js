@@ -25,7 +25,7 @@ const serializers = {
       </div>
     ),
     data: (props) => <D3 props={props} />,
-    image: (props) => <BlockImage props={props} />,
+    image: (props) => <BlockImage props={props.node} />,
     break: (props) => {
       const { style } = props.node;
       if (style === "break") {
