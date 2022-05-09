@@ -1,14 +1,10 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
 import React from "react";
 import imageUrlBuilder from "@sanity/image-url";
 const sanityClient = require("@sanity/client");
 
 const client = sanityClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET,
+  projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+  dataset: process.env.GATSBY_SANITY_DATASET,
   useCdn: true, // `false` if you want to ensure fresh data
 });
 
