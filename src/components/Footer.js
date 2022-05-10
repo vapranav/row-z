@@ -75,7 +75,7 @@ const Footer = () => {
             {" "}
             Copyright © 2021 - 2022{" "}
             <a
-              href='https://www.linkedin.com/in/pranav-v-a-a566031a4/'
+              href=''
               className='mx-2 text-wickedblue hover:text-gray-100'
               rel='noopener noreferrer'
             >
